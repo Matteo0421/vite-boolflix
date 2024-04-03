@@ -13,6 +13,31 @@ import Main from './components/Main.vue'
         store
       }
     },
+    methods:{
+      getApi(){
+        axios.get(this.store.apiUrl, {
+          params:{
+            api_key: 'eb8089c22a2d2fcac201fd0048e497ea',
+            language: 'it_IT',
+            query: 'Matrix'
+          }
+        })
+        .then( result => {
+
+          this.store.cardsList = [];
+
+          this.store.cardsList = result.data.results;
+          console.log(this.store.cardsList);
+
+        })
+        .catch(error => {
+          console.log(error);
+        })
+      }
+    },
+    mounted(){
+      this.getApi()
+    }
   }
 
 </script>

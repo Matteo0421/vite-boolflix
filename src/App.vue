@@ -16,11 +16,12 @@ import Main from './components/Main.vue'
     methods:{
       getApi(){
         axios.get(this.store.apiUrl, {
-          params:{
-            api_key: 'eb8089c22a2d2fcac201fd0048e497ea',
-            language: 'it_IT',
-            query: 'Matrix'
-          }
+          params: store.queryParams
+          // {
+          //   api_key: 'eb8089c22a2d2fcac201fd0048e497ea',
+          //   language: 'it_IT',
+          //   query: 'cars'
+          // }
         })
         .then( result => {
 
@@ -43,7 +44,7 @@ import Main from './components/Main.vue'
 </script>
 
 <template>
-  <Header />
+  <Header @startSearch="getApi"/>
   <Main />
 </template>
 

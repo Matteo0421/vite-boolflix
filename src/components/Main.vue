@@ -15,7 +15,17 @@ import {store} from '../data/store'
 
 
 <template>
-  
+  <div class="text-center  container  ">
+    <div class="row row-cols-4  p-3">
+      <Card v-for=" card in this.store.cardsList"
+        :key="card.id"
+        :original_title="card.original_title"
+        :title="card.title"
+        :vote_average="card.vote_average"
+        />
+
+    </div>
+  </div>
 </template>
 
 

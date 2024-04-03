@@ -2,5 +2,6 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
-  counter: 0
+  apiUrl: 'https://api.themoviedb.org/3/search/movie',
+  cardsList: [],
 })

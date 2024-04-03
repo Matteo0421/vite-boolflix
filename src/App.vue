@@ -34,10 +34,28 @@ import Main from './components/Main.vue'
         .catch(error => {
           console.log(error);
         })
+      },
+
+      getApiSerieTv(){
+        axios.get(this.store.apiUrlSerieTv, {
+          params: store.queryParams
+        })
+        .then( result => {
+
+          this.store.cardsListSerieTv = [];
+
+          this.store.cardsListSerieTv = result.data.results;
+          console.log(this.store.cardsListSerieTv);
+
+        })
+        .catch(error => {
+          console.log(error);
+        })
       }
     },
     mounted(){
       this.getApi()
+      this.getApiSerieTv()
     }
   }
 

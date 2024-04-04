@@ -21,11 +21,6 @@ import Main from './components/Main.vue'
       getApi(){
         axios.get(this.store.apiUrl, {
           params: store.queryParams
-          // {
-          //   api_key: 'eb8089c22a2d2fcac201fd0048e497ea',
-          //   language: 'it-IT',
-          //   query: 'cars'
-          // }
         })
         .then( result => {
 

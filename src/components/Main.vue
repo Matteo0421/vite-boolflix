@@ -16,7 +16,10 @@ import {store} from '../data/store'
 
 <template>
   <div class="text-center  container mb-5 ">
-    <h2 class="text-danger">FILM</h2>
+    <h2 class="text-danger">FILM <i class="fa-solid fa-film"></i> </h2>
+
+    <p v-if="!store.queryParams.query" class="text-white p-3 fs-3">Non hai ancora cercato nessun Film</p>
+
     <div class="row row-cols-4  p-3">
       <Card v-for=" card in this.store.cardsList"
         :key="card.id"
@@ -33,7 +36,9 @@ import {store} from '../data/store'
   </div>
 
   <div class="text-center  container mb-5 ">
-    <h2 class="text-danger">SERIE TV</h2>
+    <h2 class="text-danger">SERIE TV<i class="fa-solid fa-tv"></i> </h2>
+
+    <p v-if="!store.queryParams.query" class="text-white p-3 fs-3">Non hai ancora cercato nessuna Serie Tv</p>
     <div class="row row-cols-4  p-3">
       <Card v-for=" card in this.store.cardsListSerieTv"
         :key="card.id"

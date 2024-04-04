@@ -19,11 +19,10 @@ import {store} from '../data/store'
 
 <template>
   <div class="d-flex justify-content-between   my-3  p-2 ">
-    <h1 class="text-danger">BOOLFLIX</h1>
-    <div class="col-5 text-end ">
-      <input class="p-1 col-6 " type="text" id="searchInput" placeholder="Cerca il tuo film o la tua serie Tv "
+    <img src="../img/logo.png" alt="BOOLFLIX" style="height: 65px;">    <div class="col-5 text-end ">
+      <input class="p-1 col-6 text-danger" type="text" id="searchInput" placeholder="Cerca il tuo film o la tua serie Tv "
       @keyup.enter="startSearch" v-model.trim="store.queryParams.query" >
-      <button class="btn btn-warning m-3  " @click="startSearch">Cerca</button>
+      <button class="btn btn-danger m-3  " @click="startSearch">Cerca</button>
     </div>
 
   </div>

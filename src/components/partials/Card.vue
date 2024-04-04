@@ -19,7 +19,7 @@
         return 'https://image.tmdb.org/t/p/w500' + posterPath;
       } else {
         // Inserisci un'immagine di fallback o gestisci il caso in cui poster_path sia vuoto
-        return 'URL_DEL_FALLBACK_IMAGE';
+        return 'src/img/abstract-home-cinema-background-illustration_118124-3052.avif';
       }
      }
     },
@@ -49,7 +49,7 @@
           <div class="stars">
             <i v-for="index in 5" :key="index" :class="{ 'fas fa-star': index <= transformedVote, 'far fa-star': index > transformedVote }"></i>
           </div>
-          <div class="description-wrapper" @wheel.prevent="">
+          <div class="description-wrapper">
             <div class="description">{{ overview }}</div>
           </div>
         </div>
@@ -63,6 +63,7 @@
  .card {
   height: 500px;
   position: relative;
+  background-color: black;
 }.card-img {
   width: 100%;
   height: 100%;
@@ -74,7 +75,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   opacity: 0;
   pointer-events: none;
@@ -89,14 +90,15 @@
 }
 
 .description-wrapper {
-  width: 100%;
-  height: 100%;
+  height: 300px;
   overflow-y: auto;
-  overflow-x: hidden;
-  white-space: pre-wrap;
-}
-.description {
-  padding-right: 20px;
+}::-webkit-scrollbar {
+  width: 10px; 
+}::-webkit-scrollbar-thumb {
+  background-color: rgb(142, 13, 13); 
+  border-radius: 5px; 
+}::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1); 
 }
 
 

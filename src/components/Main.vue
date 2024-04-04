@@ -16,7 +16,7 @@ import {store} from '../data/store'
 
 <template>
   <div class="text-center  container mb-5 ">
-    <h2>FILM</h2>
+    <h2 class="text-danger">FILM</h2>
     <div class="row row-cols-4  p-3">
       <Card v-for=" card in this.store.cardsList"
         :key="card.id"
@@ -33,7 +33,7 @@ import {store} from '../data/store'
   </div>
 
   <div class="text-center  container mb-5 ">
-    <h2>SERIE TV</h2>
+    <h2 class="text-danger">SERIE TV</h2>
     <div class="row row-cols-4  p-3">
       <Card v-for=" card in this.store.cardsListSerieTv"
         :key="card.id"

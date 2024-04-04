@@ -15,8 +15,21 @@
         // Inserisci un'immagine di fallback o gestisci il caso in cui poster_path sia vuoto
         return 'URL_DEL_FALLBACK_IMAGE';
       }
+     }
+    },
+    computed: {
+    // Metodo per ottenere il voto medio trasformato da 1 a 5
+    transformedVote() {
+      // Arrotonda sempre per eccesso il voto medio
+      const roundedVote = Math.ceil(this.vote_average);
+      // Trasforma il voto medio da 1 a 10 a un voto da 1 a 5
+      return Math.ceil(roundedVote / 2);
     }
-    }
+   },
+   mounted() {
+    console.log("vote_average:", this.vote_average);
+    console.log("transformedVote:", this.transformedVote);
+  }
   }
 </script>
 
@@ -28,8 +41,9 @@
         <h5 class="card-title">{{ original_title }}</h5> 
         <p class="card-text">{{ title }}</p>
         <p class="card-text">{{ original_language }}</p>
-        <p class="card-text">{{ vote_average }}</p>
-      </div>
+        <div class="stars">
+          <i v-for="index in 5" :key="index" :class="{ 'fas fa-star': index <= transformedVote, 'far fa-star': index > transformedVote }"></i>
+        </div>      </div>
     </div>
   </div>
 </template>
@@ -37,5 +51,7 @@
 
 
 <style lang="scss" scoped>
- 
+ .stars {
+  color: #f0bb00; /* Colore delle stelline */
+}
 </style>

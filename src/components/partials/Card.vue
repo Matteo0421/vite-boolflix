@@ -49,7 +49,9 @@
           <div class="stars">
             <i v-for="index in 5" :key="index" :class="{ 'fas fa-star': index <= transformedVote, 'far fa-star': index > transformedVote }"></i>
           </div>
-          <p class="card-text">{{ overview }}</p>
+          <div class="description-wrapper" @wheel.prevent="">
+            <div class="description">{{ overview }}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -85,5 +87,17 @@
 }.stars {
   color: #f0bb00;
 }
+
+.description-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+}
+.description {
+  padding-right: 20px;
+}
+
 
 </style>

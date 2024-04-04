@@ -24,6 +24,8 @@ import {store} from '../data/store'
         :title="card.title"
         :vote_average="card.vote_average"
         :original_language="card.original_language"
+        :poster_path="card.poster_path"
+
         />
 
     </div>

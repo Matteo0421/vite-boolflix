@@ -25,6 +25,7 @@ import {store} from '../data/store'
         :vote_average="card.vote_average"
         :original_language="card.original_language"
         :poster_path="card.poster_path"
+        :overview="card.overview"
 
         />
 
@@ -41,6 +42,8 @@ import {store} from '../data/store'
         :vote_average="card.vote_average"
         :original_language="card.original_language"
         :poster_path="card.poster_path"
+        :overview="card.overview"
+
         />
 
     </div>

@@ -53,7 +53,9 @@ import Main from './components/Main.vue'
             title: item.name,
             vote_average: item.vote_average,
             original_language: item.original_language,
-            poster_path: item.poster_path
+            poster_path: item.poster_path,
+            overview: item.overview
+
           }))
           console.log(this.store.cardsListSerieTv);
 

@@ -5,7 +5,8 @@
       title: String,
       vote_average: Number,
       original_language: String,
-      poster_path: String
+      poster_path: String,
+      overview: String,
     },
     methods: {
       getFullImagePath(posterPath) {
@@ -26,10 +27,7 @@
       return Math.ceil(roundedVote / 2);
     }
    },
-   mounted() {
-    console.log("vote_average:", this.vote_average);
-    console.log("transformedVote:", this.transformedVote);
-  }
+
   }
 </script>
 
@@ -43,7 +41,9 @@
         <p class="card-text">{{ original_language }}</p>
         <div class="stars">
           <i v-for="index in 5" :key="index" :class="{ 'fas fa-star': index <= transformedVote, 'far fa-star': index > transformedVote }"></i>
-        </div>      </div>
+        </div>  
+        <p class="card-text">{{ overview }}</p>
+    </div>
     </div>
   </div>
 </template>

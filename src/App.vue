@@ -23,7 +23,7 @@ import Main from './components/Main.vue'
           params: store.queryParams
           // {
           //   api_key: 'eb8089c22a2d2fcac201fd0048e497ea',
-          //   language: 'it_IT',
+          //   language: 'it-IT',
           //   query: 'cars'
           // }
         })

@@ -1,19 +1,13 @@
 <script>
 import {store} from '../data/store'
   export default {  
-    data(){
+    data(){https://bos.boolean.careers/_nuxt/img/1692605450-avatar.9ce1136.png
       return{
         store,
-        query: ''
       }
     },
     methods:{
       startSearch(){
-        this.store.queryParams= {
-          api_key: 'eb8089c22a2d2fcac201fd0048e497ea',
-          language: 'it_IT',
-          query: this.query
-        }
         this.$emit('startSearch')
         console.log(this.store.queryParams)      }
     }
@@ -28,7 +22,7 @@ import {store} from '../data/store'
     <h1 class="text-danger">BOOLFLIX</h1>
     <div class="col-5 text-end ">
       <input class="p-1 col-6 " type="text" id="searchInput" placeholder="Cerca il tuo film o la tua serie Tv "
-      @keyup.enter="startSearch" v-model.trim="query" >
+      @keyup.enter="startSearch" v-model.trim="store.queryParams.query" >
       <button class="btn btn-warning m-3  " @click="startSearch">Cerca</button>
     </div>
 

@@ -24,7 +24,7 @@ import 'swiper/css/bundle'; // Importa tutti gli stili di Swiper
 <template>
   <div class="swiper-container">
     <swiper :watchSlidesProgress="true" :slidesPerView="3" class="mySwiper">
-      <swiper-slide v-for="card in store.cardsListPopular" :key="card.id">
+      <swiper-slide v-for="card in store.cardsListTopRated" :key="card.id">
         <Card
           :original_title="card.original_title"
           :title="card.title"
@@ -43,8 +43,8 @@ import 'swiper/css/bundle'; // Importa tutti gli stili di Swiper
 <style lang="scss" scoped>
 
 .swiper-container {
-  width: 80%; 
-  margin: 0 auto; 
+  width: 80%;
+  margin: 0 auto;
 }
 
 .swiper-slide {

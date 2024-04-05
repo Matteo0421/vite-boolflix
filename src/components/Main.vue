@@ -1,11 +1,13 @@
 <script>
 import Card from './partials/Card.vue';
 import Carosel from './partials/Carosel.vue';
+import CaroselTopRated from './partials/CaroselTopRated.vue';
 import {store} from '../data/store'
   export default {
     components:{
       Card,
-      Carosel
+      Carosel,
+      CaroselTopRated
     },
     data(){
       return{
@@ -22,7 +24,6 @@ import {store} from '../data/store'
 
     <div class="row row-cols-4  p-3">
       <Carosel />
-
     </div>
   </div>
 
@@ -30,16 +31,7 @@ import {store} from '../data/store'
     <h2 class="text-danger">TOP RATED <i class="fa-solid fa-film"></i> </h2>
 
     <div class="row row-cols-4  p-3">
-      <Card v-for=" card in this.store.cardsListTopRated"
-        :key="card.id"
-        :original_title="card.original_title"
-        :title="card.title"
-        :vote_average="card.vote_average"
-        :original_language="card.original_language"
-        :poster_path="card.poster_path"
-        :overview="card.overview"
-
-        />
+      <CaroselTopRated />
 
     </div>
   </div>

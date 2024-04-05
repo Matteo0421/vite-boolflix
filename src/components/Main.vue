@@ -1,9 +1,11 @@
 <script>
 import Card from './partials/Card.vue';
+import Carosel from './partials/Carosel.vue';
 import {store} from '../data/store'
   export default {
     components:{
-      Card
+      Card,
+      Carosel
     },
     data(){
       return{
@@ -15,6 +17,35 @@ import {store} from '../data/store'
 
 
 <template>
+  <div class="text-center  container mb-5 ">
+    <h2 class="text-danger">TOP POPULAR <i class="fa-solid fa-film"></i> </h2>
+
+    <div class="row row-cols-4  p-3">
+      <Carosel />
+
+    </div>
+  </div>
+
+  <div class="text-center  container mb-5 ">
+    <h2 class="text-danger">TOP RATED <i class="fa-solid fa-film"></i> </h2>
+
+    <div class="row row-cols-4  p-3">
+      <Card v-for=" card in this.store.cardsListTopRated"
+        :key="card.id"
+        :original_title="card.original_title"
+        :title="card.title"
+        :vote_average="card.vote_average"
+        :original_language="card.original_language"
+        :poster_path="card.poster_path"
+        :overview="card.overview"
+
+        />
+
+    </div>
+  </div>
+
+
+
   <div class="text-center  container mb-5 ">
     <h2 class="text-danger">FILM <i class="fa-solid fa-film"></i> </h2>
 

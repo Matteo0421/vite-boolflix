@@ -1,7 +1,7 @@
 <script>
 import {store} from '../data/store'
   export default {  
-    data(){https://bos.boolean.careers/_nuxt/img/1692605450-avatar.9ce1136.png
+    data(){
       return{
         store,
       }

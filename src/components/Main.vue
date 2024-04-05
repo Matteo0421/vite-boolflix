@@ -19,7 +19,7 @@ import {store} from '../data/store'
 
 
 <template>
-  <div class="text-center  container mb-5 ">
+  <div class="text-center  container mb-5 " :class="{ 'd-none': store.queryParams.query !== '' }">
     <h2 class="text-danger">TOP POPULAR <i class="fa-solid fa-film"></i> </h2>
 
     <div class="row row-cols-4  p-3">
@@ -27,7 +27,7 @@ import {store} from '../data/store'
     </div>
   </div>
 
-  <div class="text-center  container mb-5 ">
+  <div class="text-center  container mb-5 " :class="{ 'd-none': store.queryParams.query !== '' }">
     <h2 class="text-danger">TOP RATED <i class="fa-solid fa-film"></i> </h2>
 
     <div class="row row-cols-4  p-3">
@@ -38,7 +38,7 @@ import {store} from '../data/store'
 
 
 
-  <div class="text-center  container mb-5 ">
+  <div class="text-center  container mb-5 " :class="{ 'd-none': store.queryParams.query === '' }">
     <h2 class="text-danger">FILM <i class="fa-solid fa-film"></i> </h2>
 
     <p v-if="!store.queryParams.query" class="text-white p-3 fs-3">Non hai ancora cercato nessun Film</p>
@@ -58,7 +58,8 @@ import {store} from '../data/store'
     </div>
   </div>
 
-  <div class="text-center  container mb-5 ">
+  <div class="text-center  container mb-5 "
+  :class="{ 'd-none': store.queryParams.query === '' }">
     <h2 class="text-danger">SERIE TV<i class="fa-solid fa-tv"></i> </h2>
 
     <p v-if="!store.queryParams.query" class="text-white p-3 fs-3">Non hai ancora cercato nessuna Serie Tv</p>

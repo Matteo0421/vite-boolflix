@@ -10,7 +10,7 @@
     },
     data() {
     return {
-      showDetails: false // Inizializzazione della variabile showDetails
+      showDetails: false 
     };
   },
     methods: {
@@ -21,7 +21,17 @@
         // Inserisci un'immagine di fallback o gestisci il caso in cui poster_path sia vuoto
         return 'src/img/abstract-home-cinema-background-illustration_118124-3052.avif';
       }
-     }
+     },
+
+     getFlag(original_language) {
+  if (original_language === 'en') {
+    return 'src/img/en.png';
+  }
+  else if (original_language === 'it') {
+    return 'src/img/it.png';
+  }
+ 
+}
     },
     computed: {
     // Metodo per ottenere il voto medio trasformato da 1 a 5
@@ -45,7 +55,10 @@
         <div class="card-body">
           <h5 class="card-title">{{ original_title }}</h5>
           <p class="card-text">{{ title }}</p>
-          <p class="card-text">{{ original_language }}</p>
+          <p class="card-text">
+              <img v-if="getFlag(original_language)" :src="getFlag(original_language)" :alt="original_language" class="w-25">
+              {{ !getFlag(original_language) ? original_language : '' }}
+          </p>
           <div class="stars">
             <i v-for="index in 5" :key="index" :class="{ 'fas fa-star': index <= transformedVote, 'far fa-star': index > transformedVote }"></i>
           </div>
